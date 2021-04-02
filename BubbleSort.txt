@@ -1,0 +1,28 @@
+/**
+ * You can edit, run, and share this code. 
+ * play.kotlinlang.org 
+ */
+
+import kotlin.random.Random
+
+fun main() {
+      val randomValues = List(10) { Random.nextInt(0, 100) }
+        println(randomValues.toString())
+        val sortSelection = bubbleSort(randomValues.toIntArray())
+        sortSelection.forEach { println(it); }
+}
+    fun bubbleSort(arr:IntArray):IntArray{
+        var swap = true
+        while(swap){
+            swap = false
+            for(i in 0 until arr.size-1){
+                if(arr[i] > arr[i+1]){
+                    val temp = arr[i]
+                    arr[i] = arr[i+1]
+                    arr[i + 1] = temp
+                    swap = true
+                }
+            }
+        }
+        return arr
+    }
